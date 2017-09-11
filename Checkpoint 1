@@ -1,0 +1,48 @@
+1. number 1, 2 and 4 are the same type, which is String type.
+value of number 3 is Integer type.
+2. Database is used when set of data is needed to be organized so that
+it is easily accessed by website through server. For example, when website
+need to display customers' information in a particular order and needed it
+to be updated by user or admin, database is necessary to efficiently handle
+this issue.
+3. SQL is a query based language where you tell SQL what you want to do without
+telling it how to do it. When SQL query is executed, it basically determines
+what is the best way to get information requested from query. On the other hand,
+procedural programming will search for every single lines in database with loop
+and search for requested information through loop condition.
+
+4. Databases are associated with column, row, tables, and values. Those elements
+fit together to describe database as a whole and manage to fully function as a
+data storage that are easy to access and play around with.
+
+5. table contains row and columns and row contains all the values in horizontal line
+and column contains all the values in vertical line.
+
+6. String, Integer, Float
+
+7. | date | payee | amount | memo |
+| ------------- |------------------------|------------|---------------|
+| 5/1/2016 | West Hill Apartments | 1500.00 | Rent |
+| 5/10/2016 | Best Toy Store | 37.00 | Beanie Babies |
+| 5/15/2016 | Mega Foods | 124.93 | Groceries |
+| 5/23/2016 | Shoes R Cool | 54.72 | Athletic shoes |
+  7.1
+  | date | amount |
+  | ------------- |------------|
+  | 5/1/2016  | 1500.00 |
+  | 5/10/2016 | 37.00 |
+  | 5/15/2016 | 124.93 |
+  | 5/23/2016 | 54.72 |
+  7.2
+  | date | payee | amount | memo |
+  | ------------- |------------------------|------------|---------------|
+  | 5/1/2016 | West Hill Apartments | 1500.00 | Rent |
+  7.3
+  | date | payee | amount | memo |
+  | ------------- |------------------------|------------|---------------|
+  | 5/15/2016 | Mega Foods | 124.93 | Groceries |
+
+8.
+8.1 SELECT email, signup FROM users WHERE name = 'DeAndre Data';
+8.2 SELECT userid FROM users WHERE email = 'aleesia.algorithm@uw.edu';
+8.3 SELECT * FROM users WHERE userid = 4;
