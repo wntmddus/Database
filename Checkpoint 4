@@ -1,0 +1,90 @@
+1. Write out a generic SELECT statement
+SELECT name, id FROM table WHERE id < 5;
+
+2. SelectFromWhere
+
+3.
+Seungs-MacBook:Databases seungyeonjoo$ createdb -U postgres -w pets
+Seungs-MacBook:Databases seungyeonjoo$ psql -f dogs.sql pets postgres
+CREATE TABLE
+INSERT 0 6
+Seungs-MacBook:Databases seungyeonjoo$ psql pets postgres
+psql (9.6.2)
+Type "help" for help.
+
+pets=# SELECT * FROM dogs;
+  id   |   name    | gender | age | weight |       breed        | intake_date | in_foster
+-------+-----------+--------+-----+--------+--------------------+-------------+------------
+ 10001 | Boujee    | F      |   3 |     36 | labrador poodle    | 2017-06-22  |
+ 10002 | Munchkin  | F      |   0 |      8 | dachsund chihuahua | 2017-01-13  | 2017-01-31
+ 10004 | Marley    | M      |   0 |     10 | labrador           | 2017-05-04  | 2016-06-20
+ 10003 | Lassie    | F      |   7 |     17 | collie shepherd    | 2016-07-05  | 2017-07-22
+ 10006 | Marmaduke | M      |   7 |    150 | great dane         | 2016-03-22  | 2016-05-15
+ 10007 | Rosco     | M      |   5 |    180 | rottweiler         | 2017-04-01  |
+(6 rows)
+
+pets=#
+
+SELECT name, gender, age FROM dogs WHERE breed LIKE '%Labrador%';
+SELECT id FROM dogs WHERE age < 1;
+SELECT name, age FROM dogs WHERE gender = 'female' AND weight > 35;
+SELECT * FROM dogs WHERE breed NOT LIKE '%Shepherd%';
+SELECT id, age, weight, breed FROM dogs WHERE weight > 60 OR breed = 'Great Danes';
+
+Cats
+
+Given a table called cats with the following data:
+
+cats
+1.
+| id | name |gender |age |intake_date | adoption_date |
+| ----- | -------- | ----- |----|------------|---------------|
+| 00001 | Mushi | M | 1 | 01-09-2016 | 03-22-2016 |
+| 00002 | Seashell | F | 7 | 01-09-2016 | |
+| 00003 | Azul | M | 3 | 01-11-2016 | 04-17-2016 |
+| 00004 | Victoire | M | 7 | 01-11-2016 | 09-01-2016 |
+| 00005 | Nala | F | 1 | 01-12-2016 | |
+
+2.
+SELECT name, adoption_date FROM cats;
+| name | adoption_date |
+| -------- |---------------|
+| Mushi | 03-22-2016 |
+| Seashell | |
+| Azul | 04-17-2016 |
+| Victoire | 09-01-2016 |
+| Nala | |
+SELECT name, age FROM cats;
+| name |age |
+| -------- |----|
+| Mushi | 1 |
+| Seashell | 7 |
+| Azul | 3 |
+| Victoire | 7 |
+| Nala | 1 |
+3.
+Display all the information about all of the available cats.
+SELECT * FROM cats;
+Choose one cat of each age to show to potential adopters.
+SELECT * FROM cats WHERE age = 1 OR age = 3 OR age = 7;
+Find all of the names of the cats, so you don’t choose duplicate names for new cats.
+SELECT name FROM cats;
+
+5.
+SELECT name FROM cats WHERE gender = ‘F’;
+| name |
+| -------- |
+| Seashell |
+| Nala |
+SELECT name FROM cats WHERE age <> 3;
+| name |
+| -------- |
+| Mushi |
+| Seashell |
+| Victoire |
+| Nala |
+SELECT ID FROM cats WHERE name != ‘Mushi’ AND gender = ‘M’;
+| id |
+| ----- |
+| 00003 |
+| 00004 |
